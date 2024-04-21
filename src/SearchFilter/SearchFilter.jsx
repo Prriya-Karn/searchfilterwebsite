@@ -1,15 +1,18 @@
 import React, { Fragment, useState } from "react";
 import FoodData from "./FoodData";
-import Buttons, { buttData } from "./Buttons";
+import Buttons from "./Buttons";
 const SearchFilter = () => {
     const buttname = FoodData.map((e)=>{
         return e.category;
     })
-    const uniqueButt = [...new Set(buttname)]
+    const uniqueButt = [...new Set(buttname),"All"]
 console.log(uniqueButt)
     const [Fooddata, updateData] = useState(FoodData);
     const [buttItem,updateButt] = useState(uniqueButt)
     const funexpr = (category)=>{
+        if(category==="All"){
+            return updateData(FoodData)
+        }
         const filterItem = FoodData.filter((e)=>{
             return e.category === category;
         })
@@ -18,6 +21,10 @@ console.log(uniqueButt)
         
     }
     
+    // const Allfun = ()=>{
+    //     updateData(FoodData)
+    // }
+
     return (
         <Fragment>
             <div className="buttons">
@@ -37,10 +44,10 @@ console.log(uniqueButt)
                 <button className="btn bg-success m-5"
                 onClick={()=>funexpr("Timepass")}>Timepass</button>
     */}
-
     <Buttons
     fun={funexpr}
     buttname = {buttItem}
+   
     />
             </div>
 

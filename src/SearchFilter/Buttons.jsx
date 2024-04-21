@@ -7,14 +7,16 @@ const Buttons = ({fun,buttname})=>{
             butt.map((e)=>{
                 
                 return(
-                    <>
-                    <button className="btn"
+                    <Fragment>
+                    <button className="btn m-5"
                     onClick={()=>fun(e)}
                     >{e}</button>
-                    </>
+                    </Fragment>
                 )
             })
         }
+
+        
         </Fragment>
     )
 }
