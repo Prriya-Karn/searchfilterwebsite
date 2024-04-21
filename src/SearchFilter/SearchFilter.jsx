@@ -8,7 +8,9 @@ const SearchFilter = () => {
     const uniqueButt = [...new Set(buttname),"All"]
 console.log(uniqueButt)
     const [Fooddata, updateData] = useState(FoodData);
-    const [buttItem,updateButt] = useState(uniqueButt)
+    const [buttItem,updateButt] = useState(uniqueButt);
+    const [search,updateSearch] = useState();
+    const [storeSearch,updateStore] = useState([]);
     const funexpr = (category)=>{
         if(category==="All"){
             return updateData(FoodData)
@@ -18,17 +20,27 @@ console.log(uniqueButt)
         })
 
         updateData(filterItem)
-        
-    }
+    } 
     
-    // const Allfun = ()=>{
-    //     updateData(FoodData)
-    // }
+    const searchItem = (event)=>{
+        updateSearch(event.target.value)
+    }
 
+    const store = (s)=>{
+         
+       const ffres = FoodData.filter((e)=>{
+        return s===e.name;
+       })
+        updateStore(ffres)
+    }
+    console.log(storeSearch)
     return (
         <Fragment>
             <div className="buttons">
-
+           
+            <input type="text" className="m-3" onChange={searchItem} placeholder="enter item"/>
+<button className="btn m-2" onClick={()=>store(search)} 
+style={{border:"1px solid black"}}>Search</button>
             {/* This is a comment */}
             {/*
                 <button className="btn bg-primary m-5" 
@@ -52,17 +64,21 @@ console.log(uniqueButt)
             </div>
 
             {
-                Fooddata.map((e) => {
-                    const {name,category,price} = e;
+                (storeSearch.length > 0 ? storeSearch : Fooddata).map((e) => {
+                    
                     return (
                         <Fragment>
-                            <h1>name: {name}</h1>
-                            <h1>category:{category}</h1>
-                            <p>price: {price}</p>
+                            <h1>name: {e.name}</h1>
+                            <h1>category:{e.category}</h1>
+                            <p>price: {e.price}</p>
                         </Fragment>
                     )
                 })
             }
+
+           
+
+           
         </Fragment>
     )
 }
