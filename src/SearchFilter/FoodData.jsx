@@ -3,7 +3,7 @@ const FoodData = [
         id:1,
         name:"Maggi",
         category: "Breakfast",
-        // image:"images/maggi.jpg",
+        image:"images/maggie.jpg",
         price:"$25",
 
     },
@@ -11,7 +11,7 @@ const FoodData = [
         id:2,
         name:"Samosa",
         category: "Evening",
-        // image:"images/samosa.jpg",
+        image:"images/samosa.jpg",
         price:"$25",
 
     },
@@ -19,7 +19,7 @@ const FoodData = [
         id:3,
         name:"Momo",
         category: "Evening",
-        // image:"images/momo.jpg",
+        image:"images/momos.jpg",
         price:"$25",
 
     },
@@ -27,7 +27,7 @@ const FoodData = [
         id:4,
         name:"Rice",
         category: "Lunch",
-        // image:"images/rice.jpg",
+        image:"images/rice.jpg",
         price:"$25",
 
     },
@@ -35,7 +35,7 @@ const FoodData = [
         id:5,
         name:"Dal",
         category: "Lunch",
-        // image:"images/dal.jpg",
+        image:"images/dal.jpg",
         price:"$25",
 
     },
@@ -43,7 +43,7 @@ const FoodData = [
         id:6,
         name:"Sabji",
         category: "Dinner",
-        // image:"images/sabji.jpg",
+        image:"images/dinner.jpg",
         price:"$25",
 
     },
@@ -51,23 +51,31 @@ const FoodData = [
         id:7,
         name:"Rajma",
         category: "Lunch",
-        // image:"images/rajma.jpg",
+        image:"images/rajma.jpg",
         price:"$25",
 
     },
     {
         id:8,
-        name:"Roti",
+        name:"salad",
         category: "Dinner",
-        // image:"images/roti.jpg",
+        image:"images/roti.jpg",
         price:"$25",
 
     },
     {
         id:9,
-        name:"Roti",
+        name:"namkin",
         category: "Timepass",
-        // image:"images/roti.jpg",
+        image:"images/namkeen.jpg",
+        price:"$25",
+
+    },
+    {
+        id:1,
+        name:"Juice",
+        category: "Breakfast",
+        image:"images/juice.jpg",
         price:"$25",
 
     },
